@@ -74,8 +74,8 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
-  margin-top: 3rem;
+  max-width: 1900px;
+  margin-top: 2rem;
 }
 
 .card {
@@ -113,7 +113,7 @@
   margin-left: 0.5rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1900px) {
   .grid {
     width: 100%;
     flex-direction: column;

@@ -68,7 +68,9 @@ export default function NavBar() {
                             'px-3 py-2 rounded-md text-sm font-medium'
                           )}
                         >
+                        <p className=" text-base text-gray-500 sm:text-lg sm:max-w-xl sm:mx-auto md:text-lg lg:mx-0">
                           {item.name}
+                        </p>
                         </a>
                       </Link>
                     ))}
@@ -93,7 +95,7 @@ export default function NavBar() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="z-50 origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <Menu.Item>
                         {({ active }) => (
                           <Link

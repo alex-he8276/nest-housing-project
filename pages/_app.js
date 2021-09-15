@@ -1,6 +1,5 @@
 import { Fragment } from 'react';
 import '../styles/globals.css';
-import MainNavigation from '../components/layout/MainNavigation';
 import NavBar from '../components/NavBar';
 
 function MyApp({ Component, pageProps }) {

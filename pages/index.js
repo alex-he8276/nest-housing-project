@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Card from '../components/Card';
+import HeroIntroduction from '../components/HeroIntroduction';
 import { MdSearch, MdPeople } from 'react-icons/md';
 import { IoCreateOutline } from 'react-icons/io5';
 
@@ -13,10 +14,9 @@ export default function Home() {
       </Head>
 
       {/* Banner */}
-      {/* Highlight */}
-      {/* Reviews */}
-      {/* Footer */}
+      <HeroIntroduction/>
 
+      {/* Highlight */}
       <div className="grid grid-cols-3 bg-white shadow-md p-5 md:px-10">
         <Card
           title="Search"
@@ -31,6 +31,12 @@ export default function Home() {
           description="Advertise your listings to over _____ students!"
         ><MdPeople size="2em" /></Card>
       </div>
+      {/* Reviews */}
+
+
+      {/* Footer */}
+
+      
     </div>
   )
 }

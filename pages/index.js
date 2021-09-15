@@ -21,7 +21,7 @@ export default function Home() {
         <Card
           title="Search"
           description="Search with ease, by price, start term, location and more!"
-        ><MdSearch size="2em" /></Card>
+        ><MdSearch size="2em" m={2} p={2}/></Card>
         <Card
           title="Create"
           description="Search with ease, by price, start term, location and more!"

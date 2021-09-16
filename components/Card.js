@@ -1,14 +1,16 @@
+import { Fragment } from "react";
 
 
 function Card(props) {
   return (
-    <div className="container h-40 rounded-lg bg-sky-600 mx-auto flex items-center justify-center flex-col p-8">
-      <h1 className="flex">{props.title}</h1>
-      <div className="rounded-full flex items-center justify-center bg-sky-600 text-white h-12 w-12">
-        {props.children}
-      </div>
-      <p>{props.description}</p>
-    </div>
+    <Fragment>
+    <div className="p-3 mr-4 bg-blue-500 text-white rounded-full">
+{props.children}  </div>
+  <div>
+    <p className="mb-2 text-sm font-medium text-gray-900">{props.title}</p>
+    <p className="text-sm font-normal text-gray-800">{props.description}</p>
+  </div>
+    </Fragment>
   );
 }
 

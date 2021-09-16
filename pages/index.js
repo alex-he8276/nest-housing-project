@@ -22,7 +22,7 @@ export default function Home() {
 
 
       {/* Footer */}
-      
+      {/* FAQ, LEAVE FEEDBACK, INSTAGRAM LINK */}
     </div>
   )
 }

@@ -1,11 +1,11 @@
 import { MongoClient } from "mongodb";
 import PostingCard from "../components/Postings/PostingCard";
-
+import Map from "../components/Map";
 
 const BrowsePage = ({ postings }) => {
 
   return (
-    <div /* className="grid mt-2 gap-6 md:grid-cols-1 lg:grid-cols-2" */>
+    <div className="flex"/* className="grid mt-2 gap-6 md:grid-cols-1 lg:grid-cols-2" */>
 
       <div className="flex flex-col">
 
@@ -26,10 +26,10 @@ const BrowsePage = ({ postings }) => {
         test
       </div> */}
 
-      {/* MapBox */}
-      {/* <div className="bg-blue-400 min-h-full mr-2">
-        test2
-      </div> */}
+      {/* Map */}
+      <section className="hidden lg:inline-flex lg:min-w-[600px]">
+        <Map />
+      </section>
 
 
     </div>

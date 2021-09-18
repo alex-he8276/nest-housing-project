@@ -1,8 +1,11 @@
+import { Result } from 'postcss';
 import { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import Pin from './Pin';
 
-function Map({ postings }) {
+function Map({ listings }) {
+
+  const [selectedLocation, setSelectedLocation] = useState({});
 
   const [viewport, setViewport] = useState({
     width: "100%",
@@ -14,22 +17,38 @@ function Map({ postings }) {
 
   return (
     <ReactMapGL
+      mapStyle="mapbox://styles/a29he/cktnxom0k04ko17qdof39achw"
+      mapboxApiAccessToken="pk.eyJ1IjoiYTI5aGUiLCJhIjoiY2t0bnhhbmloMDcxcTJucDlvcm1pMm81MiJ9.-_wEqRQpNeYmyNE9lBDhlg"
       {...viewport}
       onViewportChange={nextViewport => setViewport(nextViewport)}
     >
-      {postings.map((posting) => (
-        <div key={posting.id}>
+      {listings.map((listing) => (
+        <div key={listing.id}>
+
           <Marker
-            latitude={posting.coordinates[0]}
-            longitude={posting.coordinates[1]} 
-            offsetLeft={-20}
+            latitude={listing.coordinates[0]}
+            longitude={listing.coordinates[1]}
+            offsetLeft={-10}
             offsetTop={-10}
           >
-            <Pin className="cursor-pointer" />
+            <Pin listing={listing} onClick={setSelectedLocation} />
           </Marker>
+
+          {selectedLocation.id === listing.id &&
+            <Popup
+              onClose={() => setSelectedLocation({})}
+              closeOnClick={true}
+              latitude={listing.coordinates[0]}
+              longitude={listing.coordinates[1]}
+            >
+              {listing.location}
+            </Popup>
+          }
+
         </div>
       ))}
-      </ReactMapGL>
+
+    </ReactMapGL>
   )
 }
 
@@ -38,7 +57,7 @@ function Map({ postings }) {
 //   const MAPBOX_STYLE = process.env.MAPBOX_STYLE;
 //   const MAPBOX_ACCESS_TOKEN = process.env.MAPBOX_ACCESS_TOKEN
 
-//   console.log(process.env.MAPBOX_STYLE);
+//   console.log(MAPBOX_STYLE);
 
 //   return {
 //     props: {

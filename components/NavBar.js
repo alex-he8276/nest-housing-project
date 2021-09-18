@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 const navigation = [
   { name: 'Browse', href: '/browse' },
-  { name: 'Post', href: '/post' },
+  { name: 'Post', href: '/create-listing' },
   { name: 'Favourites', href: '/favourites' },
   { name: 'Messages', href: '/messages' },
 ]
@@ -68,9 +68,9 @@ export default function NavBar() {
                             'px-3 py-2 rounded-md text-sm font-medium'
                           )}
                         >
-                        <p className=" text-base text-gray-500 sm:text-lg sm:max-w-xl sm:mx-auto md:text-lg lg:mx-0">
-                          {item.name}
-                        </p>
+                          <p className=" text-base text-gray-500 sm:text-lg sm:max-w-xl sm:mx-auto md:text-lg lg:mx-0">
+                            {item.name}
+                          </p>
                         </a>
                       </Link>
                     ))}

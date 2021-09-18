@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }) {
         <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/react-datepicker/2.14.1/react-datepicker.min.css" />
       </Head>
-      <Script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaSF-UHuEUCqP4jHxQLpjPo1NuiGYK25I&libraries=places"></Script>
+      <Script src={process.env.NEXT_PUBLIC_GOOGLE_MAP_CONNECTION} strategy="beforeInteractive"></Script>
       <NavBar />
       <Component {...pageProps} />
     </Fragment>

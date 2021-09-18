@@ -3,6 +3,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { VscAccount } from "react-icons/vsc";
 import Link from 'next/link'
+import Image from 'next/dist/client/image';
 
 const navigation = [
   { name: 'Browse', href: '/browse' },
@@ -38,19 +39,25 @@ export default function NavBar() {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                  <Link href="/">
-                    <img
-                      className="block lg:hidden h-8 w-auto cursor-pointer"
-                      src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                      alt="Workflow"
-                    />
+                  <Link href="/" passHref>
+                    <div className="block lg:hidden h-8 w-auto cursor-pointer">
+                      <Image
+                        src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                        alt="logo"
+                        layout="fill"
+                      >
+                      </Image>
+                    </div>
                   </Link>
-                  <Link href="/">
-                    <img
-                      className="hidden lg:block h-8 w-auto cursor-pointer"
-                      src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                      alt="Workflow"
-                    />
+                  <Link href="/" passHref>
+                    <div className="hidden lg:block h-8 w-auto cursor-pointer">
+                      <Image
+                        src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
+                        alt="logo"
+                        layout="fill"
+                      >
+                      </Image>
+                    </div>
                   </Link>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
@@ -144,7 +151,8 @@ export default function NavBar() {
             </div>
           </Disclosure.Panel>
         </>
-      )}
-    </Disclosure>
+      )
+      }
+    </Disclosure >
   )
 }

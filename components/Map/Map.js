@@ -1,4 +1,3 @@
-import { Result } from 'postcss';
 import { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import Pin from './Pin';

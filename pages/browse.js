@@ -12,7 +12,6 @@ const BrowsePage = ({ listings }) => {
 
   return (
     <div className="flex"/* className="grid mt-2 gap-6 md:grid-cols-1 lg:grid-cols-2" */>
-
       <div className="flex flex-col">
 
         {/* listings List */}

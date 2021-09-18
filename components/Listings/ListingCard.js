@@ -2,12 +2,12 @@ import Image from 'next/image';
 import { HeartIcon as HeartOutline } from "@heroicons/react/outline";
 import { HeartIcon as HeartSolid } from "@heroicons/react/solid";
 
-function ListingCard({ image, price, location, description, term, duration }) {
+function ListingCard({ image, price, location, title, description, term, duration }) {
 
   return (
     <div className="flex py-4 px-3 border-b-2 cursor-pointer hover:shadow-lg transition duration-200 first:border-t-2">
       <div className="relative h-24 md:h-52 w-40 md:w-80 flex-shrink-0 rounded-3xl">
-        <Image src={image} layout="fill" className="rounded-2xl" />
+        <Image src={image} alt={title} layout="fill" className="rounded-2xl" />
       </div>
 
       <div className="flex flex-col flex-grow pl-5">

@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import ReactMapGL from 'react-map-gl';
+import ReactMapGL, { Marker, Popup } from 'react-map-gl';
+import Pin from './Pin';
 
-function Map({ MAPBOX_STYLE, MAPBOX_ACCESS_TOKEN }) {
+function Map({ postings }) {
 
   const [viewport, setViewport] = useState({
-    width: "20%",
+    width: "100%",
     height: "100%",
     latitude: 43.47289,
     longitude: -80.5392,
@@ -12,15 +13,23 @@ function Map({ MAPBOX_STYLE, MAPBOX_ACCESS_TOKEN }) {
   });
 
   return (
-    <div>
-      <ReactMapGL
-        {...viewport}
-        mapStyle={process.env.MAPBOX_STYLE}
-        mapboxApiAccessToken={process.env.MAPBOX_ACCESS_TOKEN}
-        onViewportChange={nextViewport => setViewport(nextViewport)}
-      />
-    </div>
-
+    <ReactMapGL
+      {...viewport}
+      onViewportChange={nextViewport => setViewport(nextViewport)}
+    >
+      {postings.map((posting) => (
+        <div key={posting.id}>
+          <Marker
+            latitude={posting.coordinates[0]}
+            longitude={posting.coordinates[1]} 
+            offsetLeft={-20}
+            offsetTop={-10}
+          >
+            <Pin className="cursor-pointer" />
+          </Marker>
+        </div>
+      ))}
+      </ReactMapGL>
   )
 }
 

@@ -1,6 +1,12 @@
+import dynamic from 'next/dynamic'
 import { MongoClient } from "mongodb";
+
 import PostingCard from "../components/Postings/PostingCard";
-import Map from "../components/Map";
+
+const Map = dynamic(() => import("../components/Map/Map"), {
+  loading: () => "Loading...",
+  ssr: false
+});
 
 const BrowsePage = ({ postings }) => {
 
@@ -16,6 +22,7 @@ const BrowsePage = ({ postings }) => {
             image={posting.image}
             price={posting.price}
             location={posting.location}
+            coordinates={posting.coordinates}
             description={posting.description}
             term={posting.term}
             duration={posting.duration}
@@ -27,8 +34,8 @@ const BrowsePage = ({ postings }) => {
       </div> */}
 
       {/* Map */}
-      <section className="hidden lg:inline-flex lg:min-w-[600px]">
-        <Map />
+      <section className="hidden lg:inline-flex lg:min-w-[470px] xl:min-w-[600px]">
+        <Map postings={postings} />
       </section>
 
 
@@ -64,11 +71,12 @@ export async function getServerSideProps() {
       washrooms: 1,
       gender: "Any",
       distances: [0.1, 0.44, 1.5],
+      coordinates: [43.47586669406319, -80.53271184396581],
     },
     {
       id: 2,
       title: "2 Rooms available for Spring term",
-      location: "330 Phillip St.",
+      location: "100 Phillip St.",
       description: "Random description",
       startDate: "Starts Sept. 4",
       term: "Winter 2022",
@@ -82,6 +90,7 @@ export async function getServerSideProps() {
       washrooms: 1,
       gender: "Any",
       distances: [0.1, 0.44, 1.5],
+      coordinates: [43.46739544092925, -80.53820500794009],
     },
     {
       id: 3,
@@ -100,6 +109,7 @@ export async function getServerSideProps() {
       washrooms: 1,
       gender: "Any",
       distances: [0.1, 0.44, 1.5],
+      coordinates: [43.47555527195781, -80.55219540993708],
     },
     {
       id: 4,
@@ -118,6 +128,7 @@ export async function getServerSideProps() {
       washrooms: 1,
       gender: "Any",
       distances: [0.1, 0.44, 1.5],
+      coordinates: [43.47767291062504, -80.54361234122729],
     },
   ];
 

@@ -39,24 +39,24 @@ export default function NavBar() {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
+                  {/* <Link href="/" passHref>
+                    <img
+                      className="block lg:hidden h-8 w-auto cursor-pointer"
+                      src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                      alt="Workflow"
+                    />
+                  </Link> */}
                   <Link href="/" passHref>
-                    <div className="block lg:hidden h-8 w-auto cursor-pointer">
-                      <Image
-                        src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                        alt="logo"
-                        layout="fill"
-                      >
-                      </Image>
-                    </div>
-                  </Link>
-                  <Link href="/" passHref>
-                    <div className="hidden lg:block h-8 w-auto cursor-pointer">
-                      <Image
+                    <div className="block h-8 w-44 cursor-pointer">
+                      <p className="font-bold text-lg text-white sm:text-lg sm:max-w-xl sm:mx-auto md:text-lg lg:mx-0 px-3 py-1">
+                        The Nest Housing
+                      </p>
+                      {/* <Image
                         src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
                         alt="logo"
                         layout="fill"
                       >
-                      </Image>
+                      </Image> */}
                     </div>
                   </Link>
                 </div>

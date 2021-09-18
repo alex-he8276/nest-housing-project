@@ -40,7 +40,6 @@ export default function HeroIntroduction() {
       </div>
       <div className="lg:absolute h-56 w-full object-cover sm:h-72 md:h-96 lg:w-1/2 lg:h-full relative lg:inset-y-0 lg:right-0 grid-col">
         <Image
-          className=""
           src="https://www.iconstudents.com/shared/skins/default/images/meet-icon-skyrise.jpg"
           alt=""
           layout="fill"

@@ -17,8 +17,8 @@ function Map({ listings }) {
 
   return (
     <ReactMapGL
-      mapStyle="mapbox://styles/a29he/cktnxom0k04ko17qdof39achw"
-      mapboxApiAccessToken="pk.eyJ1IjoiYTI5aGUiLCJhIjoiY2t0bnhhbmloMDcxcTJucDlvcm1pMm81MiJ9.-_wEqRQpNeYmyNE9lBDhlg"
+      mapStyle={process.env.NEXT_PUBLIC_MAPBOX_STYLE}
+      mapboxApiAccessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}
       {...viewport}
       onViewportChange={nextViewport => setViewport(nextViewport)}
     >
@@ -51,21 +51,5 @@ function Map({ listings }) {
     </ReactMapGL>
   )
 }
-
-// NextJS environment variables are only accessible here.
-// export async function getStaticProps() {
-//   const MAPBOX_STYLE = process.env.MAPBOX_STYLE;
-//   const MAPBOX_ACCESS_TOKEN = process.env.MAPBOX_ACCESS_TOKEN
-
-//   console.log(MAPBOX_STYLE);
-
-//   return {
-//     props: {
-//       MAPBOX_STYLE: MAPBOX_STYLE,
-//       MAPBOX_ACCESS_TOKEN: MAPBOX_ACCESS_TOKEN,
-//     },
-//   };
-
-// }
 
 export default Map;

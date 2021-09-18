@@ -15,7 +15,7 @@ function ListingForm({ onCreateListing }) {
     utilities: 0,
     image: "",
     buildingType: "Apartment/Condo",
-    duration: "Winter 2022",
+    duration: "4 Months",
     roomsAvailable: 1,
     bathrooms: 1,
     gender: "Any",
@@ -84,7 +84,7 @@ function ListingForm({ onCreateListing }) {
                     };
 
                     return (
-                      <div {...getSuggestionItemProps(suggestion, { style })} onClick={(e) => handleSelect(suggestion.description)}>
+                      <div key={suggestion.description} {...getSuggestionItemProps(suggestion, { style })} onClick={(e) => handleSelect(suggestion.description)}>
                         {suggestion.description}
                       </div>
                     );

@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import Head from 'next/head';
 import Router from 'next/router';
 import ProgressBar from "@badrap/bar-of-progress";
+import Script from 'next/script';
 
 
 import '../styles/globals.css';
@@ -27,8 +28,8 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
         <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/react-datepicker/2.14.1/react-datepicker.min.css" />
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaSF-UHuEUCqP4jHxQLpjPo1NuiGYK25I&libraries=places"></script>
       </Head>
+      <Script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaSF-UHuEUCqP4jHxQLpjPo1NuiGYK25I&libraries=places"></Script>
       <NavBar />
       <Component {...pageProps} />
     </Fragment>

@@ -5,17 +5,14 @@ function CreateListingPage() {
   const router = useRouter();
 
   const createListingHandler = async (enteredListingData) => {
-    // const response = await fetch('/api/new-meetup', {
-    //   method: 'POST',
-    //   body: JSON.stringify(enteredListingData),
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   }
-    // });
+    const response = await fetch('/api/new-listing', {
+      method: 'POST',
+      body: JSON.stringify(enteredListingData),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
 
-    // const data = await response.json();
-    // console.log(data);
-    console.log(enteredListingData);
     router.push('/browse');
   }
 

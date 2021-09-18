@@ -33,17 +33,18 @@ function ListingForm({ onCreateListing }) {
   }
 
   const handleSelect = async address => {
-    const results = await geocodeByAddress(address);
-    const latLng = await getLatLng(results[0]);
     setFormData({ ...formData, location: address });
-    setFormData({ ...formData, coordinates: [latLng.lat, latLng.lng] });
   };
 
   const handleSubmit = (event) => {
+    const results = await geocodeByAddress(address);
+    const latLng = await getLatLng(results[0]);
+    setFormData({ ...formData, coordinates: [latLng.lat, latLng.lng] });
     event.preventDefault();
 
     onCreateListing(formData);
   }
+
   return (
     <form className="w-full" onSubmit={handleSubmit} >
       <div className="flex flex-wrap -mx-3 mb-6">
